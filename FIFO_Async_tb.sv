@@ -14,8 +14,8 @@ module FIFO_Async_tb();
 	logic r_RD_En = 1'b0;				// Read Enable
 	logic r_WR_En = 1'b0;				// Write Enable
 	logic w_Empty, w_Full;				// Empty and Full flags
-	logic [WIDTH-1:0] r_WR_Data = 0;	//
-	logic [WIDTH-1:0] w_RD_Data;
+	logic [WIDTH-1:0] r_WR_Data = 0;	// Data to write
+	logic [WIDTH-1:0] w_RD_Data;		// Data to read
 	
 	// Instantiate FIFO_Async UUT
 	FIFO_Async
@@ -65,7 +65,7 @@ module FIFO_Async_tb();
 		r_WR_En   <= 1'b0;
 		@(posedge r_WR_clk);
 
-		repeat(4) @(posedge r_RD_clk);
+		repeat(2) @(posedge r_RD_clk);
 
 		// Read out that word
 		r_RD_En <= 1'b1;
