@@ -1,2 +1,3 @@
 # Asynchronous-FIFO
-Asynchronous FIFO. Grey Code pointers
+Asynchronous FIFO. Verilog files. 
+Grey Code pointers
